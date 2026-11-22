@@ -37,6 +37,13 @@
       "id": "fm.nori.playback",
       "versions": [
         {
+          "version": "0.7.1",
+          "api": 7,
+          "released": "2026-11-22",
+          "url": "https://github.com/norifm/nori-dev-plugins/releases/download/playback-0.7.1/playback-0.7.1.noriplugin",
+          "sha256": "5c681c84c152547d183e93427c6a476ff6c9d29298b263f2944bb78d7888f29b"
+        },
+        {
           "version": "0.7.0",
           "api": 7,
           "released": "2026-11-22",
@@ -46,7 +53,7 @@
       ],
       "name": "Speed and pitch",
       "about": "Playback speed and pitch, skipping silence, and what previous does.",
-      "source": "https://github.com/norifm/nori-dev-plugins/tree/playback-0.7.0/playback",
+      "source": "https://github.com/norifm/nori-dev-plugins/tree/playback-0.7.1/playback",
       "points": [
         "lifecycle"
       ],
@@ -58,7 +65,8 @@
       ],
       "net": [],
       "readme": "https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/playback/README.md",
-      "icon": "https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/playback/icon.png"
+      "icon": "https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/playback/icon.png",
+      "category": "playback"
     },
     {
       "id": "fm.nori.remote-switch",
