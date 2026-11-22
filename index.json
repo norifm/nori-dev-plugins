@@ -127,6 +127,13 @@
       "id": "fm.nori.speaker",
       "versions": [
         {
+          "version": "0.8.1",
+          "api": 7,
+          "released": "2026-11-22",
+          "url": "https://github.com/norifm/nori-dev-plugins/releases/download/speaker-0.8.1/speaker-0.8.1.noriplugin",
+          "sha256": "bf3512f38ecaf747c462b40aa9afa53d5e5d0d4fd54d9a286ff3989743f68e8f"
+        },
+        {
           "version": "0.8.0",
           "api": 7,
           "released": "2026-11-22",
@@ -136,7 +143,7 @@
       ],
       "name": "nori speaker",
       "about": "Plays on a nori speaker on your network.",
-      "source": "https://github.com/norifm/nori-dev-plugins/tree/speaker-0.8.0/speaker",
+      "source": "https://github.com/norifm/nori-dev-plugins/tree/speaker-0.8.1/speaker",
       "points": [
         "lifecycle",
         "hooks"
@@ -153,7 +160,8 @@
       "net": [
         "lan"
       ],
-      "readme": "https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/speaker/README.md"
+      "readme": "https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/speaker/README.md",
+      "category": "device"
     }
   ]
 }
