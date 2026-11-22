@@ -1,27 +1,31 @@
-# nori plugins
+# nori dev plugins
 
-This repository holds nori's own plugins and the plugin repo that nori lists by default. Each plugin is
-a WebAssembly component built with nori's plugin SDK. To learn how plugins work and how to write one,
-see [Plugins](https://github.com/norifm/nori/blob/master/docs/developers/plugins.md) in nori's developer
-docs.
+Plugins for nori's developers: the ones its checks install, examples of each extension point, and
+plugins for hardware of our own. nori's plugins for listeners are in
+[nori-plugins](https://github.com/norifm/nori-plugins), the repo nori lists by default. Each plugin is a
+WebAssembly component built with nori's plugin SDK; how plugins work is in
+[Plugins](https://github.com/norifm/nori/blob/master/docs/developers/plugins.md).
 
 ## The plugins
 
 | Plugin | What it adds | Extension points |
 |---|---|---|
-| `mix-tuning` | AutoMix's longest mix, tempo change and parts, past what its style sets | `lifecycle` (overrides) |
-| `moving-covers` | An album's moving cover from Apple Music, in the player | `slots` |
 | `orbit` | A sound effect: the music circles your head | `sound-stage` |
 | `playback` | Speed, pitch, skipping silence and what previous does | `lifecycle` (overrides) |
 | `remote-switch` | A switch on **Playing on** that turns remote control and jams off | `lifecycle` (overrides) |
-| `showcase` | One of every kind of row and place a plugin can fill, for plugin authors | `lifecycle`, `slots` |
-| `sony` | Battery, noise control and settings for Sony headphones | `device-control`, `hooks`, `lifecycle` |
-| `soundcloud` | SoundCloud as a kind of profile | `provider` |
-| `soundcore` | Battery, noise control and settings for Soundcore headphones | `device-control`, `hooks`, `lifecycle` |
+| `showcase` | One of every kind of row and place a plugin can fill | `lifecycle`, `slots` |
 | `speaker` | Casting to a nori speaker on your network | `lifecycle`, `hooks` |
-| `youtube-music` | YouTube Music as a kind of profile | `provider` |
 
-Each plugin's `README.md` is what listeners read on its page in nori.
+nori's checks use them: `tools/feature-e2e.sh` installs orbit and the showcase from `dist/`
+(`NORI_PLUGINS_DIST`), and `web/check/plugins.mjs` installs orbit and playback from this repo.
+
+## Use the repo
+
+In nori, open **Settings › Plugins › Get plugins › Repos**, choose **Add repo** and enter:
+
+```
+https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/index.json
+```
 
 ## Build a plugin
 
@@ -56,16 +60,6 @@ package, and commits the new version to `index.json` on `main`. Nobody writes `i
 
 Packing is deterministic. To check a release, pack its tag again and compare the sha256 with the one in
 `index.json`.
-
-`python3 tools/pack.py --links` points each plugin in `index.json` at its README and icon on `main`,
-and builds nothing. Each plugin's `icon.svg` is its icon's source.
-
-## The repo
-
-nori reads `index.json` from this repository's `main` branch, and offers the newest version of each
-plugin that its plugin API runs. Any static host can serve another repo of the same shape, and users add
-it by the address of its `index.json`. The index format, signatures and API versions are in the
-[plugin reference](https://github.com/norifm/nori/blob/master/docs/developers/plugin-reference.md).
 
 ## License
 

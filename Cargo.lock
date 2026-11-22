@@ -154,15 +154,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "innertube-music"
-version = "0.1.0"
-source = "git+https://github.com/filipton/innertube-music#53291b221e064cde07ecaa5efafe51030372443d"
-dependencies = [
- "serde_json",
- "sha1_smol",
-]
-
-[[package]]
 name = "itoa"
 version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -185,21 +176,6 @@ name = "memchr"
 version = "2.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
-
-[[package]]
-name = "mix-tuning"
-version = "0.2.0"
-dependencies = [
- "nori-plugin-sdk",
-]
-
-[[package]]
-name = "moving-covers"
-version = "0.7.0"
-dependencies = [
- "nori-plugin-sdk",
- "serde_json",
-]
 
 [[package]]
 name = "nori-plugin-sdk"
@@ -284,7 +260,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba"
 dependencies = [
  "serde_core",
- "serde_derive",
 ]
 
 [[package]]
@@ -321,12 +296,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sha1_smol"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bbfa15b3dddfee50a0fff136974b3e1bde555604ba463834a7eb7deb6417705d"
-
-[[package]]
 name = "showcase"
 version = "0.7.0"
 dependencies = [
@@ -338,29 +307,6 @@ name = "slab"
 version = "0.4.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
-
-[[package]]
-name = "sony"
-version = "0.2.0"
-dependencies = [
- "nori-plugin-sdk",
-]
-
-[[package]]
-name = "soundcloud"
-version = "0.7.0"
-dependencies = [
- "nori-plugin-sdk",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "soundcore"
-version = "0.10.1"
-dependencies = [
- "nori-plugin-sdk",
-]
 
 [[package]]
 name = "speaker"
@@ -526,16 +472,6 @@ dependencies = [
  "serde_json",
  "unicode-xid",
  "wasmparser",
-]
-
-[[package]]
-name = "youtube-music"
-version = "0.8.0"
-dependencies = [
- "innertube-music",
- "nori-plugin-sdk",
- "serde",
- "serde_json",
 ]
 
 [[package]]

@@ -32,7 +32,7 @@ def points(bits):
 
 def links(name):
     """Plugin `name`'s README and icon on the main branch: what a repo's page shows of every version."""
-    raw = f"https://raw.githubusercontent.com/norifm/nori-plugins/main/{name}"
+    raw = f"https://raw.githubusercontent.com/norifm/nori-dev-plugins/main/{name}"
     return {key: f"{raw}/{file}" for key, file in (("readme", "README.md"), ("icon", "icon.png")) if (root / name / file).exists()}
 
 
@@ -107,7 +107,7 @@ def needs(wasm):
 
 
 
-REPO = "https://github.com/norifm/nori-plugins"
+REPO = "https://github.com/norifm/nori-dev-plugins"
 # nori's `POINTS`, in the order of its manifest's bits.
 POINTS = ["lifecycle", "hooks", "provider", "sound-stage", "preparation", "automix", "deciders", "slots", "device-control", "lyrics", "scrobbler"]
 
@@ -119,7 +119,7 @@ if release and len(names) != 1:
 dist.mkdir(exist_ok=True)
 # Panic messages keep source paths: named the same on every machine, a tag builds to the same bytes anywhere.
 cargo_home = os.environ.get("CARGO_HOME", pathlib.Path.home() / ".cargo")
-env = {**os.environ, "RUSTFLAGS": f"--remap-path-prefix={root}=nori-plugins --remap-path-prefix={cargo_home}=cargo"}
+env = {**os.environ, "RUSTFLAGS": f"--remap-path-prefix={root}=nori-dev-plugins --remap-path-prefix={cargo_home}=cargo"}
 if "--links" in sys.argv:
     index_file = root / "index.json"
     index = json.loads(index_file.read_text())
