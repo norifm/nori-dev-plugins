@@ -7,7 +7,7 @@ use nori_plugin_sdk::cast::{self, Kind, Look, Target};
 use nori_plugin_sdk::hooks::Event;
 use nori_plugin_sdk::sockets::Tcp;
 use nori_plugin_sdk::types::Service;
-use nori_plugin_sdk::{discovery, log, Hook, Hooks, Lifecycle, Manifest};
+use nori_plugin_sdk::{discovery, log, Category, Hook, Hooks, Lifecycle, Manifest};
 
 /// What the speakers announce.
 const KIND: &str = "_nori-speaker._tcp";
@@ -101,6 +101,6 @@ impl Hooks for Speaker {
     }
 }
 
-const MANIFEST: Manifest = Manifest { net: &["lan"], hooks: &[Hook::OutputPicker, Hook::MediaButton], ..Manifest::new("fm.nori.speaker") };
+const MANIFEST: Manifest = Manifest { net: &["lan"], hooks: &[Hook::OutputPicker, Hook::MediaButton], category: Category::Device, ..Manifest::new("fm.nori.speaker") };
 
 nori_plugin_sdk::plugin!(Speaker, MANIFEST, lifecycle, hooks);

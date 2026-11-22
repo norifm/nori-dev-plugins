@@ -3,7 +3,7 @@
 //! own values back; nothing here touches the samples.
 
 use nori_plugin_sdk::types::Value;
-use nori_plugin_sdk::{rows, settings, Lifecycle, Manifest, Row, RowKind};
+use nori_plugin_sdk::{rows, settings, Category, Lifecycle, Manifest, Row, RowKind};
 
 /// Each row and the nori value it sets.
 const SETS: [(&str, &str); 4] = [("speed", "playback.speed"), ("pitch", "playback.pitch"), ("skip_silence", "silence.skip"), ("previous_skips", "queue.previousAlwaysSkips")];
@@ -37,6 +37,7 @@ const MANIFEST: Manifest = Manifest {
         Row::switch("skip_silence", false),
         Row::switch("previous_skips", false),
     ],
+    category: Category::Playback,
     ..Manifest::new("fm.nori.playback")
 };
 

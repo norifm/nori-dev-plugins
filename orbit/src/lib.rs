@@ -3,7 +3,7 @@
 //! time differences between ears), and duller while it is behind.
 
 use nori_plugin_sdk::sound_stage::{Format, Inputs};
-use nori_plugin_sdk::{state, Manifest, Row, Slot, SoundStage};
+use nori_plugin_sdk::{state, Category, Manifest, Row, Slot, SoundStage};
 
 /// The longest delay between the ears, seconds (a head's width).
 const MAX_ITD_S: f32 = 0.00066;
@@ -109,6 +109,7 @@ impl SoundStage for Orbit {
 const MANIFEST: Manifest = Manifest {
     stage: Some(Slot::Master),
     rows: &[Row::level("speed", 0.02, 1.0, 0.01, 0.12).unit("speed_unit"), Row::level("width", 0.0, 1.0, 0.05, 0.8).hint("width_hint")],
+    category: Category::Playback,
     ..Manifest::new("fm.nori.orbit")
 };
 
